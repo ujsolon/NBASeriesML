@@ -22,8 +22,8 @@ Feedback? Contact me: [ujsolon.com](https://ujsolon.com/).
 ## Images
 
 ![nba1.jpg](/image/nba1.jpg "Miami is favored ay 55%")
-![nba1.jpg](/image/nba1.jpg "Previous 150 series starting 3-0 results in a win for the leading team.")
-![nba1.jpg](/image/nba1.jpg "Winner of games 1, 2 and 5 correlates to a game 7 win.")
+![nba1.jpg](/image/nba2.jpg "Previous 150 series starting 3-0 results in a win for the leading team.")
+![nba1.jpg](/image/nba3.jpg "Winner of games 1, 2 and 5 correlates to a game 7 win.")
 
 
 ## Inline code
