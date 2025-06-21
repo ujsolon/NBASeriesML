@@ -1,6 +1,6 @@
 ---
 title: "Boston Celtics vs. Miami Heat 2023 Playoffs East Finals"
-excerpt: "Hello, this is a test"
+excerpt: "Using linear regression on historical Game 7 point spreads, our model gives the Miami Heat a 55% chance to win over Boston."
 coverImage: "/assets/blog/boston_miami_30may2023/nba1.jpg"
 date: "2023-05-30T08:30:00.000Z"
 author:
@@ -34,9 +34,9 @@ Feedback? Contact me: [ujsolon.com](https://ujsolon.com/).
 
 ## Images
 
-![nba1.jpg](/image/nba1.jpg "Miami is favored ay 55%")
-![nba1.jpg](/image/nba2.jpg "Previous 150 series starting 3-0 results in a win for the leading team.")
-![nba1.jpg](/image/nba3.jpg "Winner of games 1, 2 and 5 correlates to a game 7 win.")
+![nba1.jpg](public\assets\blog\boston_miami_30may2023\nba1.jpg "Miami is favored ay 55%")
+![nba1.jpg](public\assets\blog\boston_miami_30may2023\nba2.jpg "Previous 150 series starting 3-0 results in a win for the leading team.")
+![nba1.jpg](public\assets\blog\boston_miami_30may2023\nba3.jpg "Winner of games 1, 2 and 5 correlates to a game 7 win.")
 
 
 ## Input Data
