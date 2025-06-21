@@ -1,13 +1,13 @@
 ---
-title: "Test"
+title: "Boston Celtics vs. Miami Heat 2023 Playoffs East Finals"
 excerpt: "Hello, this is a test"
-coverImage: "/assets/blog/hello-world/cover.jpg"
+coverImage: "/assets/blog/boston_miami_30may2023/nba1.jpg"
 date: "2023-05-30T08:30:00.000Z"
 author:
   name: Ulyses Solon
   picture: "/assets/blog/authors/uj.png"
 ogImage:
-  url: "/assets/blog/hello-world/cover.jpg"
+  url: "/assets/blog/boston_miami_30may2023/nba1.jpg"
 ---
 
 # NBASeriesML: Predicting Game 7 Outcomes in NBA Playoffs
