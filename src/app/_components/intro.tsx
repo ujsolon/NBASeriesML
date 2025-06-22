@@ -7,7 +7,7 @@ export function Intro() {
         Crunch Time Predictions: NBA Game 7s Analyzed
       </h1>
       <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        Explore how ML models forecast outcomes when everything's on the line.
+        Explore how ML models forecast outcomes when everything is on the line.
       </h4>
     </section>
   );
