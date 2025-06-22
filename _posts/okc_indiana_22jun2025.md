@@ -1,6 +1,6 @@
 ---
-title: "OKC Thunder vs Indiana Pacers - NBA Finals 2025"
-excerpt: "Analyzing past Game 7 point differentials through linear regression yields a 71% win probability for Oklahoma versus Indiana."
+title: "OKC Thunder vs Indiana Pacers - NBA Finals 2025 Prediction"
+excerpt: "Analyzing previous Game 7 point differentials through linear regression yields a 71% win probability for Oklahoma versus Indiana."
 coverImage: "/assets/blog/okc_indiana_22jun2025/nba1.png"
 date: "2025-06-22T08:30:00.000Z"
 author:
