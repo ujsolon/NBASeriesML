@@ -10,7 +10,7 @@ ogImage:
   url: "/assets/blog/okc_indiana_22jun2025/nba1.png"
 ---
 
-_(working document)_
+_(working document, AI-generated images in-use)_
 
 ## Quick Overview
 
