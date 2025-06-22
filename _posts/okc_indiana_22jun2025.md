@@ -14,7 +14,9 @@ _(working document, AI-generated images in-use)_
 
 ## Quick Overview
 
-This analysis is part of [**NBASeriesML**](https://github.com/ujsolon/NBASeriesML), a machine learning project designed to predict the outcomes of NBA Game 7 matchups using historical data. By training a linear regression model via gradient descent on point differentials from 147 past Game 7s, the system identifies patterns that correlate with victory. In the previous [**Celtics vs. Heat 2023 series**](https://nbaml.vercel.app/posts/boston_miami_30may2023), the model converged after 150 iterations and predicted a narrow win probability for Miami at 55%. The current matchup between the Oklahoma City Thunder and Indiana Pacers is evaluated using the same model, which now forecasts a 71% chance of victory for Oklahoma based on their series point margins. This data-driven approach underscores how statistical modeling can enrich understanding and forecasting in high-stakes playoff basketball.
+This analysis is part of [**NBASeriesML**](https://github.com/ujsolon/NBASeriesML), a machine learning project designed to predict the outcomes of NBA Game 7 matchups using historical data. By training a linear regression model via gradient descent on point differentials from 147 past Game 7s, the system identifies patterns that correlate with victory. In the previous [**Celtics vs. Heat 2023 series**](https://nbaml.vercel.app/posts/boston_miami_30may2023), the model converged after 150 iterations and predicted a narrow win probability for Miami at 55%.
+
+The current matchup between the Oklahoma City Thunder and Indiana Pacers is evaluated using the same model, which now forecasts a **71% chance of victory for Oklahoma based on their series point margins**. This data-driven approach underscores how statistical modeling can enrich understanding and forecasting in high-stakes playoff basketball.
 
 ## Series Background
 1. Game1: 110-111 = -1
