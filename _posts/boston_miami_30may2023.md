@@ -1,5 +1,5 @@
 ---
-title: "Boston Celtics vs. Miami Heat 2023 Playoffs East Finals"
+title: "Boston Celtics vs. Miami Heat - 2023 Playoffs East Finals"
 excerpt: "Using linear regression on historical Game 7 point spreads, our model gives the Miami Heat a 55% chance to win over Boston."
 coverImage: "/assets/blog/boston_miami_30may2023/nba1.jpg"
 date: "2023-05-30T08:30:00.000Z"
