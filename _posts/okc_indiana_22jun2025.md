@@ -1,44 +1,94 @@
 ---
-title: "Oklahoma City Thunder vs Indiana Pacers NBA Finals"
+title: "OKC Thunder vs Indiana Pacers - NBA Finals 2025"
 excerpt: "Analyzing past Game 7 point differentials through linear regression yields a 71% win probability for Oklahoma versus Indiana."
 coverImage: "/assets/blog/okc_indiana_22jun2025/nba1.png"
 date: "2025-06-22T08:30:00.000Z"
 author:
   name: Ulyses Solon
-  picture: "/assets/blog/authors/uj.png"
+  picture: "/assets/blog/authors/uj.jpg"
 ogImage:
   url: "/assets/blog/okc_indiana_22jun2025/nba1.png"
 ---
 
-# NBASeriesML: Predicting Game 7 Outcomes in NBA Playoffs
+_(working document)_
 
-**NBASeriesML** utilizes machine learning to predict the outcome of NBA Game 7 matchups, focusing on the Boston Celtics vs. Miami Heat 2023 Playoffs East Finals series. The model, trained using gradient descent for linear regression on point differences from 147 previous Game 7s, converged after 150 iterations with a prediction favoring Miami at 55%. This approach highlights the power of data-driven sports analytics in forecasting game outcomes. The project demonstrates how machine learning can enhance understanding and strategy formulation in professional basketball.
+## Quick Overview
 
-### Introduction
-In the dynamic and competitive realm of professional basketball, predicting the outcome of crucial playoff matchups is an intriguing challenge. The thrilling nature of a Game 7 showdown adds an extra layer of excitement and uncertainty. With the advent of machine learning and its application to sports analytics, it has become possible to leverage data-driven approaches to gain insights into the likely victor of a highly anticipated series.
+This analysis is part of [**NBASeriesML**](https://github.com/ujsolon/NBASeriesML), a machine learning project designed to predict the outcomes of NBA Game 7 matchups using historical data. By training a linear regression model via gradient descent on point differentials from 147 past Game 7s, the system identifies patterns that correlate with victory. In the previous [**Celtics vs. Heat 2023 series**](https://nbaml.vercel.app/posts/boston_miami_30may2023), the model converged after 150 iterations and predicted a narrow win probability for Miami at 55%. The current matchup between the Oklahoma City Thunder and Indiana Pacers is evaluated using the same model, which now forecasts a 71% chance of victory for Oklahoma based on their series point margins. This data-driven approach underscores how statistical modeling can enrich understanding and forecasting in high-stakes playoff basketball.
 
-In this study, we delve into the task of predicting the winner of the Boston Celtics (BOS) versus Miami Heat (MIA) Game 7 matchup. We employ a gradient descent method for linear regression to teach our model the results of 147 previous game 7 s, considering only the point differences between the two playing teams, and nothing else.
-
-### Result:
-
-With a learning rate of 0.01, our model converges at around 150 iterations, giving weights w=[0.03, 0.03, 0.01,0, 0.03,-0.01], and bias factor b=0.
-Applying the model to the current point differences of x = [7, 6, 26, -17, -13, -1], sigmoid(w*x+b) = 0.5476, which I interpret to be a win for Miami, 55% of the time.
-1. Game1: 123-116 = 7
-2. Game2: 111-105 = 6
-3. Game3: 128-102 = 26
-4. Game4: 99-116 = -17
-5. Game5: 97-110 = -13
-6. Game6: 103-104 = -1
-
-Feedback? Contact me: [ujsolon.com](https://ujsolon.com/).
-
-## Images
-
-![nba1.jpg](public\assets\blog\boston_miami_30may2023\nba1.jpg "Miami is favored ay 55%")
-![nba1.jpg](public\assets\blog\boston_miami_30may2023\nba2.jpg "Previous 150 series starting 3-0 results in a win for the leading team.")
-![nba1.jpg](public\assets\blog\boston_miami_30may2023\nba3.jpg "Winner of games 1, 2 and 5 correlates to a game 7 win.")
-
+## Series Background
+1. Game1: 110-111 = -1
+2. Game2: 123-107 = 16
+3. Game3: 107-116 = -9
+4. Game4: 111-104 = 7
+5. Game5: 120-109 = 11
+6. Game6: 91-108 = -17
 
 ## Input Data
 
-Raw data from Basketball Reference ([link](https://www.basketball-reference.com/playoffs/series.html)) is downloaded and initially processed in [NBAinput.csv](https://github.com/ujsolon/NBASeriesML/blob/main/NBAinput.csv). The data is then filtered and prepared for use in the machine learning model, as detailed in [NBA_ML.ipynb](https://github.com/ujsolon/NBASeriesML/blob/main/NBA_ML.ipynb). The processed input data can be accessed [here](https://github.com/ujsolon/NBASeriesML/blob/main/NBAinput.csv).
+Raw data from [**Basketball Reference**](https://www.basketball-reference.com/playoffs/series.html) is downloaded and initially processed in [**NBASeriesResults.csv**](https://github.com/ujsolon/NBASeriesML/blob/main/NBASeriesML/NBASeriesResults.csv). The data is then filtered and prepared for use in the machine learning model, as detailed in [**NBA_ML.ipynb**](https://github.com/ujsolon/NBASeriesML/blob/main/NBASeriesML/NBA_ML_v2.ipynb). The processed input data can be accessed via [**NBAinput.csv**](https://github.com/ujsolon/NBASeriesML/blob/main/NBASeriesML/NBAinput.csv).
+
+## Methodology
+
+### Data Preprocessing
+
+The methodology begins with loading and preprocessing NBA game data from a CSV file:
+
+1. **Data Loading**: Game data is read from `NBAinput.csv` using Python's CSV reader
+2. **Header Removal**: Column headers are removed from the dataset
+3. **Data Type Conversion**: String values are converted to integers for numerical processing
+4. **Feature-Target Separation**: The last column becomes the target variable, remaining columns become features
+5. **Array Conversion**: Features and targets are converted to NumPy arrays for efficient computation
+
+### Model Initialization
+
+The logistic regression model is initialized with:
+- **Weights (`w`)**: A 6-dimensional vector initialized with random values from a normal distribution, scaled by 10
+- **Bias (`b`)**: Set to 0.5 as the initial value
+- **Feature Dimensionality**: The model expects 6 features (corresponding to 6 games in the series)
+
+### Training Algorithm
+
+The model uses **batch gradient descent** for optimization:
+
+### Gradient Descent Implementation
+- **Learning Rate (`alpha`)**: Set to 0.01 to control the step size during parameter updates
+- **Iterations**: 500 iterations for convergence
+- **Cost Function**: Logistic cost function (cross-entropy loss)
+- **Gradient Computation**: Uses `compute_gradient_logistic()` to calculate partial derivatives
+- **Parameter Updates**:
+  - `w = w - alpha * dj_dw` (weight updates)
+  - `b = b - alpha * dj_db` (bias updates)
+
+### Training Process
+1. **Iterative Optimization**: For each iteration, the algorithm:
+   - Computes gradients using current parameters
+   - Updates weights and bias using the gradients
+   - Records the cost for monitoring convergence
+2. **Progress Monitoring**: Cost is printed every 10% of total iterations to track training progress
+3. **History Tracking**: Cost values are stored in `J_history` for analysis (limited to 100,000 entries to prevent memory issues)
+
+## Prediction Process
+
+After training, the model makes predictions using:
+1. **Linear Combination**: Computes `np.dot(x, w_out) + b_out` where `x` is the input feature vector
+2. **Sigmoid Activation**: Applies the sigmoid function to convert the linear output to a probability between 0 and 1
+3. **Interpretation**: The resulting probability represents the likelihood of the team winning (values > 0.5 indicate a predicted win)
+
+## Model Application
+
+The trained model is applied to the current series data:
+- **Input Vector**: `x = [-1, 16, -9, 7, 11, -17]` representing point differentials for Games 1-6
+- **Output**: A probability score indicating the likelihood of Oklahoma City Thunder winning Game 7
+- **Decision Threshold**: Probabilities above 0.5 are interpreted as a predicted win for the team
+
+This methodology implements a classical supervised learning approach using logistic regression with gradient descent optimization, specifically tailored for binary classification of NBA Game 7 outcomes based on historical point differential patterns.
+
+### Results and Discussion
+
+With a learning rate of 0.01, our model converges at around 150 iterations, giving weights w=[0.03, 0.03, 0.01,0, 0.03,-0.01], and bias factor b=0.
+Applying the model to the current point differences of x = [-1, 16, -9, 7, 11, -17], sigmoid(w*x+b) = 0.7097, which I interpret to be a **win for Oklahoma, 71% of the time.**
+
+Feedback? Contact me: [ujsolon.com](https://ujsolon.com/).
+
+
