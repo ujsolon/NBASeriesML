@@ -5,7 +5,7 @@ coverImage: "/assets/blog/boston_miami_30may2023/nba1.jpg"
 date: "2023-05-30T08:30:00.000Z"
 author:
   name: Ulyses Solon
-  picture: "/assets/blog/authors/uj.png"
+  picture: "/assets/blog/authors/uj.jpg"
 ogImage:
   url: "/assets/blog/boston_miami_30may2023/nba1.jpg"
 ---
