@@ -1,13 +1,13 @@
 ---
 title: "Oklahoma City Thunder vs Indiana Pacers NBA Finals"
-excerpt: "Using linear regression on historical Game 7 point spreads, our model gives the Miami Heat a 55% chance to win over Boston."
-coverImage: "/assets/blog/boston_miami_30may2023/nba1.jpg"
+excerpt: "Analyzing past Game 7 point differentials through linear regression yields a 71% win probability for Oklahoma versus Indiana."
+coverImage: "/assets/blog/okc_indiana_22jun2025/nba1.jpg"
 date: "2025-06-22T08:30:00.000Z"
 author:
   name: Ulyses Solon
   picture: "/assets/blog/authors/uj.png"
 ogImage:
-  url: "/assets/blog/boston_miami_30may2023/nba1.jpg"
+  url: "/assets/blog/okc_indiana_22jun2025/nba1.jpg"
 ---
 
 # NBASeriesML: Predicting Game 7 Outcomes in NBA Playoffs
