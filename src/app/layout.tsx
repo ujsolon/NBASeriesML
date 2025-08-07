@@ -64,22 +64,7 @@ export default function RootLayout({
         <ThemeSwitcher />
         <div className="min-h-screen">{children}</div>
         <Footer />
-      </body>
-    </html>
-  );
-}
-
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="en">
-      <head>
-        {/* ...existing head... */}
-      </head>
-      <body className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}>
-        <ThemeSwitcher />
-        <div className="min-h-screen">{children}</div>
-        <Footer />
-        <Analytics /> {/* Add this line */}
+        <Analytics />
       </body>
     </html>
   );
